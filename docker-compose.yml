@@ -1,0 +1,17 @@
+version: '3.9'
+services:
+  frontend:
+    build:
+      context: ./reactapp
+      dockerfile: DockerFile
+    ports:
+      - 3000:3000
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./webapi
+      dockerfile: DockerFile
+    ports:
+      - 8000:8000
